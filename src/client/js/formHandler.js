@@ -19,7 +19,7 @@ const postInfo = async (url = '', info = {}) => {
 
 function handleSubmit(event) {
     event.preventdefault()
-    let urltext=document.getElementById('article-url').value;
+    let urltext=document.getElementById('text').value;
     if(checkURL(urltext)) {
          postInfo("http://localhost:8088/addurl", {url: urltext}).then(info => {
           document.getElementById('model').innerHTML = `model: ${info.model}`;
