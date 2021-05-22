@@ -1,4 +1,5 @@
 import { handleSubmit } from './js/formHandler'
+import { checkURL } from './js/URLVerifier' 
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -14,4 +15,4 @@ import './styles/header.scss'
 // })
 
  
- export { handleSubmit };
+ export { handleSubmit, checkURL }

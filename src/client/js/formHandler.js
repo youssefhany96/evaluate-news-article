@@ -2,11 +2,12 @@ import { checkURL } from "./URLVerifier"
 
 const postInfo = async (url = '', info = {}) => {
     const response = await fetch(url, {
-        method: 'POSTInfo',
+        method: 'POST',
         credentials: 'same-origin',
         mode: 'cors',
         headers: {
-            'Content-Type': 'app/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(info)
     })
@@ -17,11 +18,12 @@ const postInfo = async (url = '', info = {}) => {
     }
 }    
 
-function handleSubmit(event) {
-    event.preventdefault()
-    let urltext=document.getElementById('text').value;
-    if(checkURL(urltext)) {
-         postInfo("http://localhost:8088/addurl", {url: urltext}).then(info => {
+function handleSubmit(e) {
+    e.preventDefault()
+ 
+    let urltext=document.getElementById("text").value;
+    if(Client.checkURL(urltext)) {
+         postInfo("http://localhost:8088/addurl", {urltext}).then(info => {
           document.getElementById('model').innerHTML = `model: ${info.model}`;
           document.getElementById('agreement').innerHTML = `agreement: ${info.agreement}`;
           document.getElementById('subjectivity').innerHTML = `subjectivity: ${info.subjectivity}`;
@@ -30,7 +32,6 @@ function handleSubmit(event) {
         })
     } else {
         alert('plz enter a valid url')
-
     }
 }    
 
