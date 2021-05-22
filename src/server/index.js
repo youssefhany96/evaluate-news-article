@@ -12,7 +12,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, '../client'))) 
+app.use(express.static("dist")) 
 
 app.get("/", (req, res) => {
     res.sendFile(path.resolve("dist/index.html"));
@@ -20,6 +20,8 @@ app.get("/", (req, res) => {
 
 let key = process.env.API_KEY;
 app.post('/addurl', async function (req, res) {
+
+    console.log('POST request received');
 
 //     res.sendFile('dist/index.html')
 //    res.sendFile(path.resolve('src/client/views/index.html'))
@@ -64,4 +66,5 @@ app.listen(PORT, (error) => {
     console.log(`The Server is listening on port ${PORT}!`)
 })
 
+module.exports=app;
 // TODO: export app to use it in the unit testing
