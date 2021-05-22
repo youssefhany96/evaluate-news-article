@@ -11,7 +11,7 @@
         <p>Enter a URL of an article / a blog to discover its sentiment.</p>
         <section>
           <form class="" onsubmit="return Client.handleSubmit(event)">
-              <input id="text" type="text" name="input" value="" placeholder="Url">
+              <input id="text" type="text" name="input" value="" placeholder="Enter the url here">
               <button class="button" type="submit" value="submit" 
               onclick="return Client.handleSubmit(event)"
               onsubmit="return Client.handleSubmit(event)">Submit
@@ -30,9 +30,7 @@
       </div>
     </main>
     <script>
-      // Check that service workers are supported
       if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/service-worker.js')
         })

@@ -7,12 +7,5 @@ import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 
-// window.addEventListener('DOMContentLoaded', () => {
-//     const submit = document.getElementById('submit-btn');
-//     submit.addEventListener('click', () => {
-//         Client.handleSubmit()
-//     })
-// })
-
  
- export { handleSubmit, checkURL }
+export { handleSubmit, checkURL }

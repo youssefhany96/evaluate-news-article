@@ -1,5 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 const mockAPIResponse = require('./mockAPI.js')
 var path = require('path');
@@ -27,10 +26,7 @@ app.post('/addurl', async function (req, res) {
 //    res.sendFile(path.resolve('src/client/views/index.html'))
     let url = req.body.urltext;
     console.log(`the url is ${url}`);
-    console.log(key);
     let url_to_be_sent = `https://api.meaningcloud.com/sentiment-2.1?key=${key}&url=${url}&lang=en`
-
-
     const response = await fetch(url_to_be_sent)
     const jsonResponse = await response.json()
     console.log(jsonResponse)
