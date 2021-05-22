@@ -17,7 +17,7 @@ const postInfo = async (url = '', info = {}) => {
     }
 }    
 
-async function handleSubmit(event) {
+function handleSubmit(event) {
     event.preventdefault()
     let urltext=document.getElementById('article-url').value;
     if(checkURL(urltext)) {
