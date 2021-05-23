@@ -6,9 +6,9 @@ const PORT = 8088
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser');
-const { default: axios } = require('axios');
 const app = express()
 const fetch = require("node-fetch")
+
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

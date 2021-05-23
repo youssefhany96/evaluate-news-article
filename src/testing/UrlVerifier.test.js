@@ -7,6 +7,6 @@ describe("Testing the existing of the url", () => {
 });  
 describe("Testing the functionality of the url", () => {
     test("Testing the checkURL() to be a function", () => {
-      expect(checkURL).toBe('function');
+      expect(typeof checkURL).toBe('function');
     });  
 });  
